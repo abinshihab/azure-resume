@@ -12,29 +12,26 @@ using System.Text;
 
 namespace Company.Function
 {
-    public static class GetResumeCounter
+    public static class GetAzureResumeCounter
     {
-        [FunctionName("GetResumeCounter")]
-        public static HttpResponseMessage Run(
+        [FunctionName("GetAzureResumeCounter")]
+        public static async Task<IActionResult> Run(
             [HttpTrigger(AuthorizationLevel.Function, "get", "post", Route = null)] HttpRequest req,
-            [CosmosDB(databaseName:"AzureResume", collectionName: "Counter", ConnectionStringSetting = "AzureResumeConnectionString", Id = "1", PartitionKey = "1")] Counter counter,
-            [CosmosDB(databaseName:"AzureResume", collectionName: "Counter", ConnectionStringSetting = "AzureResumeConnectionString", Id = "1", PartitionKey = "1")] out Counter updatedCounter,
             ILogger log)
         {
-            // Here is where the counter gets updated.
             log.LogInformation("C# HTTP trigger function processed a request.");
 
-            updatedCounter = counter;
-            updatedCounter.Count += 1;
+            string name = req.Query["name"];
 
-            var jsonToRetun = JsonConvert.SerializeObject(counter);
+            string requestBody = await new StreamReader(req.Body).ReadToEndAsync();
+            dynamic data = JsonConvert.DeserializeObject(requestBody);
+            name = name ?? data?.name;
 
-            return new HttpResponseMessage(System.Net.HttpStatusCode.OK)
-            {
-                Content = new StringContent(jsonToRetun, Encoding.UTF8, "application/json")
-            };
+            string responseMessage = string.IsNullOrEmpty(name)
+                ? "This HTTP triggered function executed successfully. Pass a name in the query string or in the request body for a personalized response."
+                : $"Hello, {name}. This HTTP triggered function executed successfully.";
 
-            
+            return new OkObjectResult(responseMessage);
         }
     }
 }
