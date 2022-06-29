@@ -1,8 +1,11 @@
 {
   "version": "2.0",
-  "extensionBundle": {
-    "id": "Microsoft.Azure.Functions.ExtensionBundle",
-    "version": "[2.*, 3.0.0)",
-    "AzureResumeConnectionString": "AccountEndpoint=https://azureresumecdb.documents.azure.com:443/;AccountKey=vqcj5RM1TcQmPaCgce471i6mAAz3dTqzPAdknE4uBspq3y1kEafGJSTJosukrNHlJYQyqwmh0bmhykNDLSb10w==;"   
+  "logging": {
+      "applicationInsights": {
+          "samplingSettings": {
+              "isEnabled": true,
+              "excludedTypes": "Request"
+          }
+      }
   }
 }
