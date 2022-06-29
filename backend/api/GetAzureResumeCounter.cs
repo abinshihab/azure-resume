@@ -12,9 +12,9 @@ using System.Text;
 
 namespace Company.Function
 {
-    public static class GetResumeCounter
+    public static class GetAzureResumeCounter
     {
-        [FunctionName("GetResumeCounter")]
+        [FunctionName("GetAzureResumeCounter")]
         public static HttpResponseMessage Run(
             [HttpTrigger(AuthorizationLevel.Function, "get", "post", Route = null)] HttpRequest req,
             [CosmosDB(databaseName:"AzureResume", collectionName: "Counter", ConnectionStringSetting = "AzureResumeConnectionString", Id = "1", PartitionKey = "1")] Counter counter,
@@ -27,11 +27,11 @@ namespace Company.Function
             updatedCounter = counter;
             updatedCounter.Count += 1;
 
-            var jsonToRetun = JsonConvert.SerializeObject(counter);
+            var jsonToRetrun = JsonConvert.SerializeObject(counter);
 
             return new HttpResponseMessage(System.Net.HttpStatusCode.OK)
             {
-                Content = new StringContent(jsonToRetun, Encoding.UTF8, "application/json")
+                Content = new StringContent(jsonToRetrun, Encoding.UTF8, "application/json")
             };
 
             
