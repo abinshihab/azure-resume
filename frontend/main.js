@@ -2,7 +2,7 @@ window.addEventListener('DOMContentLoaded',even =>{
     getVisitCount();
 })
 
-const functionApi = "";
+const functionApi = "http://localhost:7071/api/GetAzureResumeCounter";
 
 const getVisitCount = () => {
 
