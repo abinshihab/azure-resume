@@ -2,7 +2,9 @@
 	"folders": [
 		{
 			"path": ".."
-		}
+
+		},
+	
 	],
 	"settings": {
 		"debug.internalConsoleOptions": "neverOpen"
