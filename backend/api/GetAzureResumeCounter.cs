@@ -20,7 +20,7 @@ namespace Company.Function
             [HttpTrigger(AuthorizationLevel.Function, "get", Route = null)] HttpRequest req,
             [CosmosDB(databaseName:"AzureResume", collectionName: "counter",
                 ConnectionStringSetting = "AzureResumeConnectionString", Id = "1", PartitionKey = "1")] Counter counter,
-                [CosmosDB(databaseName:"AzureResume", collectionName: "cfunounter",
+                [CosmosDB(databaseName:"AzureResume", collectionName: "counter",
                 ConnectionStringSetting = "AzureResumeConnectionString", Id = "1", PartitionKey = "1")] out Counter updatedCounter,
             ILogger log)
         {
