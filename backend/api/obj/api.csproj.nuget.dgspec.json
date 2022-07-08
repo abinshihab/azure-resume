@@ -1,17 +1,17 @@
 {
   "format": 1,
   "restore": {
-    "c:\\Users\\binshehab\\azure-resume\\backend\\api\\api.csproj": {}
+    "C:\\Users\\binshehab\\azure-resume\\backend\\api\\api.csproj": {}
   },
   "projects": {
-    "c:\\Users\\binshehab\\azure-resume\\backend\\api\\api.csproj": {
+    "C:\\Users\\binshehab\\azure-resume\\backend\\api\\api.csproj": {
       "version": "1.0.0",
       "restore": {
-        "projectUniqueName": "c:\\Users\\binshehab\\azure-resume\\backend\\api\\api.csproj",
+        "projectUniqueName": "C:\\Users\\binshehab\\azure-resume\\backend\\api\\api.csproj",
         "projectName": "api",
-        "projectPath": "c:\\Users\\binshehab\\azure-resume\\backend\\api\\api.csproj",
+        "projectPath": "C:\\Users\\binshehab\\azure-resume\\backend\\api\\api.csproj",
         "packagesPath": "C:\\Users\\binshehab\\.nuget\\packages\\",
-        "outputPath": "c:\\Users\\binshehab\\azure-resume\\backend\\api\\obj\\",
+        "outputPath": "C:\\Users\\binshehab\\azure-resume\\backend\\api\\obj\\",
         "projectStyle": "PackageReference",
         "configFilePaths": [
           "C:\\Users\\binshehab\\AppData\\Roaming\\NuGet\\NuGet.Config",
