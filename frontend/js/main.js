@@ -3,7 +3,6 @@
  *
  * ------------------------------------------------------------------- */
 
-
 (function(html) {
 
     "use strict";
@@ -13,8 +12,7 @@
 
    /* Preloader
     * -------------------------------------------------- */
-  
-   const ssPreloader = function() {
+    const ssPreloader = function() {
 
         const preloader = document.querySelector('#preloader');
         if (!preloader) return;
